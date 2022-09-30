@@ -1,0 +1,135 @@
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Index" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+
+<link rel=”stylesheet” href=CustomSelect.css type=”text/css”/>
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({ minDate: "-3M -15D", maxDate: "+3M +15D",changeMonth:true,changeYear:true });
+  } );
+  </script>
+
+
+
+
+
+    <title>Ön Mülakat Bilgisi Ekle</title>
+   
+ 
+</head>
+<div class="container-fluid p-3">
+        <div class="row pt-4">
+            <div class="col-3 text-start">
+                <h2 class="m-0 font-weight-bold text-heading">Ön Mülakat Bilgisi Ekle</h2>
+            </div>
+        </div>
+    </div>
+<style>
+.column{
+    float:left;
+    width: 50%;
+}
+.row:after {
+    content:"";
+    display: table;
+    clear: both;
+}
+.centralize{
+    float:initial;
+    width:100%;
+}
+
+
+</style>
+
+<form method="post">
+<div class="row">
+    <div class="column">
+        <label asp-for="UserId">Kullanıcı ID</label>
+        <input asp-for="UserId" class="form-control" />
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div> 
+    <div class="column">
+        <label asp-for="#">Maaş Beklentisi</label>
+        <input asp-for="#" class="form-control" />
+        <span asp-validation-for="#" class="text-danger"></span>
+    </div>
+    <div class="column">
+        <label asp-for="#">Değerlendirme</label>
+        <input asp-for="#" class="form-control" />
+        <span asp-validation-for="#" class="text-danger"></span>
+    </div>
+    <div class="column">
+        <label asp-for="#">Alternatif Rol</label>
+        <input asp-for="#" class="form-control" />
+        <span asp-validation-for="#" class="text-danger"></span>
+    </div>
+</div>
+    
+<div class="row">
+    <div class="column">
+        <label asp-for="#">Başlık</label>
+        <input asp-for="#" class="form-control" />
+        <span asp-validation-for="#" class="text-danger"></span>
+    </div>      
+    
+    <div class="column">
+        <label asp-for="#">Katılımcılar</label>
+        <input asp-for="#" class="form-control" />
+    </div>  
+
+    <div class="column">
+            <label asp-for="#">Görüşme Tarihi</label>
+        <input placeholder="GG/AA/YYYY" type = "text" id ="datepicker" asp-for="#" class="form-control" />
+    </div>        
+
+
+
+    
+    <!-- CUSTOM SELECT -->
+    <div class="column">
+        <label asp-for="#">Görüşme Şekli</label>
+        <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+            <option selected="selected">Yüzyüze</option>
+            <option>Online</option>
+            <option>Tele-Konferans</option>
+        </select> </div> <!-- /.form-group -->
+        </div>       
+  
+</div>
+<br />
+<button type="submit" class="btn btn-primary" style="width:150px">Onayla</button>
+    <a asp-controller="Candidate" asp-action="Index" class="btn btn-secondary" style="width:150px">
+        Geri Dön
+    </a>
+</form>
+
+
+<script>
+    $(document).ready(function() {
+    $('.select2').select2({
+    closeOnSelect: false
+});
+});
+</script>
+
+<script>
+    
+</script>
